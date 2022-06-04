@@ -13,7 +13,7 @@ import './i18n';
 require('./styles/main.scss');
 
 // Load the p5 png logo, so that webpack will use it
-require('./images/p5js-square-logo.png');
+require('./images/P5SkiaLogo.png');
 
 const history = browserHistory;
 const initialState = window.__INITIAL_STATE__;

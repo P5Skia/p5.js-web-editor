@@ -1,10 +1,7 @@
 version: '3.4'
 services:
-  mongo:
-    image: mongo:3.6
-    volumes:
-      - dbdata:/data/db
   app:
+    container_name: "giga_p5code"
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,7 +12,7 @@ services:
     # defined in your .env file for testing
     env_file:
     #   - "$PWD/.env.production"
-      - "$PWD/.env"
+      - "$PWD/p5code/.env"
     # environment:
     #   - API_URL
     #   - AWS_ACCESS_KEY
@@ -56,9 +53,11 @@ services:
       - .:/opt/node/app
       - /opt/node/app/node_modules
     ports:
-      - '8000:8000'
-      - '8002:8002'
-    depends_on:
-      - mongo
-volumes:
-  dbdata:
+      - '8200:8200'
+      - '8202:8202'
+    networks:
+      - giga_network      
+networks:
+  giga_network:
+    # Use a custom driver
+    name: giga_network

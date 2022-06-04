@@ -19,11 +19,7 @@ function LoginView() {
         <div className="form-container__content">
           <h2 className="form-container__title">{t('LoginView.Login')}</h2>
           <LoginForm />
-          <h2 className="form-container__divider">{t('LoginView.LoginOr')}</h2>
-          <div className="form-container__stack">
-            <SocialAuthButton service={SocialAuthButton.services.github} />
-            <SocialAuthButton service={SocialAuthButton.services.google} />
-          </div>
+          <p className="form-container__divider"></p>
           <p className="form__navigation-options">
             {t('LoginView.DontHaveAccount')}
             <Link className="form__signup-button" to="/signup">

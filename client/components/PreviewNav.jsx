@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { withTranslation } from 'react-i18next';
 
-import LogoIcon from '../images/p5js-logo-small.svg';
+import LogoIcon from '../images/P5SkiaLogoSmall.svg';
 import CodeIcon from '../images/code.svg';
 
 const PreviewNav = ({ owner, project, t }) => (

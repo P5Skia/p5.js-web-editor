@@ -24,7 +24,7 @@ export default ({
     <mj-container>
       <mj-section>
         <mj-column>
-          <mj-image width="192" src="${domain}/images/p5js-square-logo.png" alt="p5.js" />
+          <mj-image width="192" src="${domain}/images/P5SkiaLogo.png" alt="p5.js" />
           <mj-divider border-color="#ed225d"></mj-divider>
         </mj-column>
       </mj-section>
