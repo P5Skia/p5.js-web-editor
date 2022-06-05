@@ -9,7 +9,8 @@ import Project from '../models/project';
 const defaultHTML = `<!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://p5code.jb1.io/p5skia/0.73/canvaskit.js"></script>
+    <script src="https://p5code.jb1.io/p5skia/0.73/p5skia.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
@@ -36,6 +37,8 @@ const clientSecret = process.env.GITHUB_SECRET;
 const headers = { 'User-Agent': 'p5js-web-editor/0.0.1' };
 
 const mongoConnectionString = process.env.MONGO_URL;
+
+console.log('mongo: ', mongoConnectionString);
 
 mongoose.connect(mongoConnectionString, {
   useNewUrlParser: true,
@@ -159,7 +162,7 @@ function getSketchContent(projectsInAllCategories) {
                 }</html>\n`;
                 project.sketchContent = splitedRes.replace(
                   'p5.js',
-                  'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js'
+                  'https://p5code.jb1.io/p5skia/0.73/p5skia.js'
                 );
               }
             } else {

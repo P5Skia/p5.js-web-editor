@@ -320,6 +320,63 @@ async function createProject(project) {
   options.url = `${options.url}/sketches`;
   options.data = project;
 
+  options.data.files['index.html'].content = options.data.files[
+    'index.html'
+  ].content.replace(
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>',
+    '<script src="https://p5code.jb1.io/p5skia/0.73/canvaskit.js">\n' +
+      '</script><script src="https://p5code.jb1.io/p5skia/0.73/p5skia.js">'
+  );
+  options.data.files['index.html'].content = options.data.files[
+    'index.html'
+  ].content.replace(
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>',
+    '<script src="https://p5code.jb1.io/p5skia/0.73/canvaskit.js">\n' +
+      '</script><script src="https://p5code.jb1.io/p5skia/0.73/p5skia.js">'
+  );
+  options.data.files['index.html'].content = options.data.files[
+    'index.html'
+  ].content.replace(
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>',
+    '<script src="https://p5code.jb1.io/p5skia/0.73/canvaskit.js">\n' +
+      '</script><script src="https://p5code.jb1.io/p5skia/0.73/p5skia.js">'
+  );
+  options.data.files['index.html'].content = options.data.files[
+    'index.html'
+  ].content.replace(
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>',
+    '<script src="https://p5code.jb1.io/p5skia/0.73/canvaskit.js">\n' +
+      '</script><script src="https://p5code.jb1.io/p5skia/0.73/p5skia.js">'
+  );
+  options.data.files['index.html'].content = options.data.files[
+    'index.html'
+  ].content.replace(
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>',
+    '<script src="https://p5code.jb1.io/p5skia/0.73/canvaskit.js">\n' +
+      '</script><script src="https://p5code.jb1.io/p5skia/0.73/p5skia.js">'
+  );
+  options.data.files['index.html'].content = options.data.files[
+    'index.html'
+  ].content.replace(
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>',
+    '<script src="https://p5code.jb1.io/p5skia/0.73/canvaskit.js">\n' +
+      '</script><script src="https://p5code.jb1.io/p5skia/0.73/p5skia.js">'
+  );
+  options.data.files['index.html'].content = options.data.files[
+    'index.html'
+  ].content.replace(
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>',
+    '<script src="https://p5code.jb1.io/p5skia/0.73/canvaskit.js">\n' +
+      '    </script><script src="https://p5code.jb1.io/p5skia/0.73/p5skia.js">'
+  );
+  options.data.files['index.html'].content = options.data.files[
+    'index.html'
+  ].content.replace(
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>',
+    '<script src="https://p5code.jb1.io/p5skia/0.73/canvaskit.js">\n' +
+      '    </script><script src="https://p5code.jb1.io/p5skia/0.73/p5skia.js">'
+  );
+  // console.log('data', options.data.files['index.html'].content);
   try {
     const { data } = await axios.request(options);
     return data;
