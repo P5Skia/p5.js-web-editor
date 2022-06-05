@@ -385,7 +385,31 @@ class Nav extends React.PureComponent {
                   onBlur={this.handleBlur}
                   onClick={this.setDropdownForNone}
                 >
-                  {this.props.t('Nav.File.Examples')}
+                  Examples (P5)
+                </Link>
+              </li>
+            )}
+            {getConfig('EXAMPLES_ENABLED') && (
+              <li className="nav__dropdown-item">
+                <Link
+                  to="/ml5/sketches"
+                  onFocus={this.handleFocusForFile}
+                  onBlur={this.handleBlur}
+                  onClick={this.setDropdownForNone}
+                >
+                  Examples (ML5)
+                </Link>
+              </li>
+            )}
+            {getConfig('EXAMPLES_ENABLED') && (
+              <li className="nav__dropdown-item">
+                <Link
+                  to="/generative-design/sketches"
+                  onFocus={this.handleFocusForFile}
+                  onBlur={this.handleBlur}
+                  onClick={this.setDropdownForNone}
+                >
+                  Examples (GG)
                 </Link>
               </li>
             )}

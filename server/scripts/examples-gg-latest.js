@@ -475,8 +475,8 @@ function getp5User() {
     if (!ggUser) {
       ggUser = new User({
         username: process.env.GG_EXAMPLES_USERNAME,
-        email: process.env.GG_EXAMPLES_PASS,
-        password: process.env.GG_EXAMPLES_EMAIL
+        email: process.env.GG_EXAMPLES_EMAIL,
+        password: process.env.GG_EXAMPLES_PASS
       });
       ggUser.save((saveErr) => {
         if (saveErr) throw saveErr;
