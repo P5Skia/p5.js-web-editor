@@ -401,16 +401,16 @@ async function createProjectsInP5user(projectsInAllCategories) {
 async function getp5User() {
   console.log('Getting p5 user');
   try {
-    const user = await User.findOne({ username: 'p5skia' }).exec();
+    const user = await User.findOne({ username: 'p5' }).exec();
     let p5User = user;
     if (!p5User) {
       p5User = new User({
-        username: 'p5skia',
+        username: 'p5',
         email: process.env.EXAMPLE_USER_EMAIL,
         password: process.env.EXAMPLE_USER_PASSWORD
       });
       await p5User.save();
-      console.log(`Created a user p5skia ${p5User}`);
+      console.log(`Created a user p5 ${p5User}`);
     }
     const projects = await Project.find({ user: p5User._id }).exec();
     console.log('Deleting old projects...');
@@ -431,4 +431,5 @@ async function getp5User() {
   }
 }
 
+console.log('Examples.js');
 getp5User();
