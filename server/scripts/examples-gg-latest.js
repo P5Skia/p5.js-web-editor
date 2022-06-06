@@ -20,9 +20,8 @@ const clientSecret = process.env.GITHUB_SECRET;
 const defaultHTML = `<!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://p5code.jb1.io/p5skia/0.73/canvaskit.js"></script>
-    <script src="https://p5code.jb1.io/p5skia/0.73/p5skia.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+    <script src="${process.env.EDITOR_URL}/p5skia/0.73/canvaskit.js"></script>
+    <script src="${process.env.EDITOR_URL}/p5skia/0.73/p5skia.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
     <!-- Generative Design Dependencies here -->
     <!-- GG Bundled -->
@@ -58,7 +57,7 @@ canvas {
 
 const headers = { 'User-Agent': 'p5js-web-editor/0.0.1' };
 
-const mongoConnectionString = process.env.MONGO_URL;
+const mongoConnectionString = process.env.MONGO_URL_LOCAL;
 
 mongoose.connect(mongoConnectionString, {
   useNewUrlParser: true,
@@ -355,6 +354,7 @@ function formatSketchForStorage(sketch, user) {
       // for all the data, stuff them into the folder
       dataInProject.forEach((item) => {
         const fileID = objectID().toHexString();
+        console.log('data: ', item.name);
         output.push({
           name: item.name,
           url: item.download_url,
@@ -406,6 +406,7 @@ function getAllSketchContent(newProjectList) {
       sketchFile.name.endsWith(".png") !== true &&
       sketchFile.name.endsWith(".svg") !== true
     */
+    // console.log('sketchFile.name', sketchFile.name);
 
     if (sketchFile.fileType === 'file' &&
       sketchFile.content != null &&
@@ -437,8 +438,8 @@ function getAllSketchContent(newProjectList) {
         // https://cdn.jsdelivr.net/gh/generative-design/Code-Package-p5.js@master/01_P/P_4_3_1_01/data/pic.png
         // const rawGitRef = `https://raw.githack.com/${newProject.files[i].url.split('.com/')[1]}`;
         const cdnRef = `https://cdn.jsdelivr.net/gh/generative-design/Code-Package-p5.js@${branchName}${newProject.files[i].url.split(branchName)[1]}`
-        // console.log("🌈🌈🌈🌈🌈", sketchFile.name);
-        // console.log("🌈🌈🌈🌈🌈", cdnRef);
+        console.log("🌈🌈🌈🌈🌈", sketchFile.name);
+        console.log("🌈🌈🌈🌈🌈", cdnRef);
         sketchFile.content = cdnRef;
         sketchFile.url = cdnRef;
         // newProject.files[1].content = newProject.files[1].content.replace(`'data/${sketchFile.name}'`, `'${rawGitRef}'`);

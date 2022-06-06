@@ -413,6 +413,18 @@ class Nav extends React.PureComponent {
                 </Link>
               </li>
             )}
+            {getConfig('EXAMPLES_ENABLED') && (
+              <li className="nav__dropdown-item">
+                <Link
+                  to="/p5skia/sketches"
+                  onFocus={this.handleFocusForFile}
+                  onBlur={this.handleBlur}
+                  onClick={this.setDropdownForNone}
+                >
+                  Examples (Skia)
+                </Link>
+              </li>
+            )}
           </ul>
         </li>
         <li className={navDropdownState.edit}>
