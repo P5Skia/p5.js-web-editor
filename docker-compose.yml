@@ -12,7 +12,7 @@ services:
     # defined in your .env file for testing
     env_file:
     #   - "$PWD/.env.production"
-      - "$PWD/p5code/.env"
+      - "$PWD/.env"
     # environment:
     #   - API_URL
     #   - AWS_ACCESS_KEY

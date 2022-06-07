@@ -20,8 +20,8 @@ const clientSecret = process.env.GITHUB_SECRET;
 const defaultHTML = `<!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="${process.env.EDITOR_URL}/p5skia/0.73/canvaskit.js"></script>
-    <script src="${process.env.EDITOR_URL}/p5skia/0.73/p5skia.min.js"></script>
+    <script src="${process.env.EDITOR_URL}/p5skia/0.74/canvaskit.js"></script>
+    <script src="${process.env.EDITOR_URL}/p5skia/0.74/p5skia.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
     <!-- Generative Design Dependencies here -->
     <!-- GG Bundled -->
